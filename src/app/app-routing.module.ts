@@ -6,21 +6,16 @@ import { RecommComponent } from './recomm/recomm.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/', 
-    pathMatch: 'full' 
-  },
-  {
-    path: '/', 
-    component: AppComponent
-  },
-  {
     path: 'ratings',
     component: RatingsComponent
   },
   {
     path: 'recomm',
     component: RecommComponent
+  },
+  {
+    path: '', 
+    component: AppComponent
   }
 ];
 
@@ -29,5 +24,5 @@ const routes: Routes = [
   exports: [RouterModule], 
   providers: []
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }
+export const routingComponents = [RatingsComponent, RecommComponent];

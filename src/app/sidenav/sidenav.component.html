@@ -9,8 +9,8 @@
     <mat-toolbar color="warn">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="/">My Orbit</a>
-      <a mat-list-item href="/ratings">Ratings</a>
-      <a mat-list-item href="/recomm">Recommended</a>
+      <a mat-list-item href="/ratings"><a [routerLink]="['/ratings']">Ratings</a></a>
+      <a mat-list-item href="/recomm"><a [routerLink]="['/recomm']">Recommended</a></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

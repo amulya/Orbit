@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 //import {SidenavdemoComponent} from './sidenavdemo/sidenavdemo.component';
+//import {SidenavComponent} from './sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',

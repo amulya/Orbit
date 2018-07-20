@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RatingsComponent } from './ratings/ratings.component'
 import { RecommComponent } from './recomm/recomm.component'
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -17,30 +17,30 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 const appRoutes: Routes = [
   { path: 'ratings', component: RatingsComponent },
   { path: 'recomm',  component: RecommComponent }
-  , { path: '', redirectTo: '/', pathMatch: 'full' },
-   { path: '**', component: RatingsComponent }
+  //,{ path: '/', component: AppComponent}
   
-  // maybe add a 'page not found' component for any random requests?
+  
+  // add a 'page not found' component for any random requests?
   //, { path: '**', component: PageNotFoundComponent }
 ];   
 
 @NgModule({
   declarations: [
     AppComponent,
-    RatingsComponent,
-    RecommComponent,
+    routingComponents,
     SidenavComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    LayoutModule,
-    MatToolbarModule,
+    BrowserAnimationsModule
+    ,RouterModule.forRoot(appRoutes, { useHash: true}) 
+    ,LayoutModule
+    , MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule     
+    MatListModule
+    //,AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
